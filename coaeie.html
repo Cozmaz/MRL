@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/ed32f17af8.js" crossorigin="anonymous"></script>
+    
+        <style>
+            body {
+                background-color: #f5f5f5;
+            }
+
+            #sidebar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100px;
+                height: 100%;
+                background-color: #ffffff;
+                color: rgb(0, 0, 0);
+                font-family: Arial, sans-serif;
+                border-radius: 25px;
+            }
+
+            img {
+                width: inherit;
+                height: auto;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 10px;
+                border-radius: 15px;
+            }
+
+            nav {
+                padding: 10px 15px;
+                position: absolute;
+            }
+
+            ul {
+                padding-bottom: 20px;
+                padding-right: 2px;
+                list-style: none;
+                padding: 0px 0px;
+                background: #ffffff;
+                width: max-content;
+                height: 100%;
+                margin: 0px 0.5px;
+                border-left-color: rgb(0, 0, 0);
+                justify-content: center;
+
+            }
+
+            li {
+                margin-bottom: 60px;
+            }
+
+            #house {
+                margin-top: 135px;
+                font-size: 25px;
+                color: black;
+                margin-left: 15px;
+
+            }
+
+            #library {
+                font-size: 25px;
+                color: black;
+                margin-left: 20px;
+            }
+
+            #login {
+                font-size: 25px;
+                color: black;
+                margin-left: 20px;
+                margin-top: 170px;
+            }
+
+            #search {
+                font-size: 25px;
+                color: black;
+                margin-left: 20px;
+            }
+
+            #settings {
+                font-size: 25px;
+                color: black;
+                margin-left: 20px;
+            }
+
+            #user {
+                font-size: 25px;
+                color: black;
+                margin-left: 20px;
+            }
+
+            .toggle-btn {
+                position: absolute;
+                top: 50%;
+                right: -25px;
+                transform: translateY(-50%);
+                background-color: #ffffff;
+                border: none;
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                cursor: pointer;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            #sidebar.expanded {
+                width: 100px;
+            }
+        </style>
+</head>
+
+<body>
+    <div id="sidebar">
+        <button class="toggle-btn"><i class="fa-solid fa-arrow-right"></i></button>
+        <img src="Images/LOGO_5.png" alt="Logo">
+        <nav class="nav">
+            <ul>
+                <li><a href="home.html"> <i class="fa-solid fa-house" id="house"></i></a></li>
+                <h1>
+                    <li><a href="search.html"><i class="fa-solid fa-magnifying-glass" id="search"></i></a></li>
+                    <li><a href="library.html"><i class="fa-solid fa-bookmark" id="library"></i></a></li>
+                    <li><a href="settings.html"><i class="fa-solid fa-gear" id="settings"></i></a></li>
+                    <li><a href="profile.html"><i class="fa-solid fa-user" id="user"></i></a></li>
+                    <li><a href="login.html"><i class="fa-solid fa-arrow-right-from-bracket " id="login"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const toggleBtn = document.querySelector('.toggle-btn');
+        let isExpanded = false;
+
+        toggleBtn.addEventListener('click', () => {
+            if(isExpanded) {
+                sidebar.classList.remove('expanded');
+                toggleBtn.innerHTML = '<i class="fa-solid fa-arrow-right"></i>';
+                isExpanded = !isExpanded;
+            } else {
+                sidebar.classList.add('expanded');
+                toggleBtn.innerHTML = '<i class="fa-solid fa-arrow-left"></i>';
+                isExpanded = !isExpanded;
+
+            }
+        });
+    
+    </script>
+    </body>
+
+</html>
